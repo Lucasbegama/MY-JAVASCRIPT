@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aqua;
+            font: normal 20pt Arial ;
+        }
+        h1,h2{
+            text-align: center;
+            box-shadow: 1px 1px 1px blanchedalmond;
+        }
+
+        main{
+            background-color: white;
+            padding: 30px;
+            margin: 50px;
+            border-radius: 20px;
+            box-shadow: 1px 1px 10px 5px black;
+
+        }
+
+        #txtvel{
+             width:90px;
+             padding: 5px;
+             background-color: red;
+             color: white;
+             font-size: Arial;
+             font-size: 1.3rem;
+             text-align: center;
+        }
+
+        #resu{
+            padding: 5px;
+            
+        }
+        .button{
+            padding: 10px;
+            background-color: red;
+            width: 100px;
+            font: normal 10pt Arial;
+            color: white;
+            border: none;
+            box-shadow: 1px 1px 5px black;
+        }
+
+        #resu{
+            box-shadow: 1px 1px 8px black;
+            text-align: center;
+            padding: 30px;
+            margin-top: 20px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1>DETRAM</h1>
+    <hr>
+    <h2>Sistema de mutas </h2>
+    <main>
+    velocidade do carro : <input type="number" name="txtvel" id="txtvel"> km/h
+    <input type="button" value="verificar" onclick="caucular()" class="button">
+    <div id="resu">
+        <span class="atencao"></span>
+    </div>
+</main>
+    <script>
+       
+        function caucular(){
+             var txtv = document.getElementById('txtvel')
+             var resu = document.getElementById('resu')
+             var vel  = Number(txtv.value)
+             resu.innerHTML=`Sua velosidade atual é <strong>${vel} km/h </strong> <br>`
+            
+             if(vel > 60){
+                resu.innerHTML +=`Você utrapaçou a velocidade permetida <br> `
+                resu.style.color='red'
+                resu.innerHTML+='Você esta <strong>Multado!</strong> <br>'
+                resu.innerHTML +='Para retira a Multa assese o campo de Multas no site '
+             }else{
+                resu.style.color='black'
+                resu.innerHTML += 'Diriga sempre com o cinto de segurança ! <br>'
+                resu.innerHTML += 'Em caso de duvidas entre em contato com o tel :155'
+             }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(69, 80, 233);
+            font: normal 20pt Arial;
+
+            
+        }
+        h1{
+            color: white;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        input{
+            width: 100px;
+            height: 30px;
+            margin: auto;
+            text-align: center;
+            margin-left: 5%;
+            margin-top: 5px;
+
+
+        }
+
+        #res{
+            margin-top: 50px;
+            color: white;
+        }
+
+        div{
+            margin: 10px;
+            padding: 5px;
+            background-color: orange;
+            border-radius: 20px;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>somando valores </h1>
+    <div>
+    <input type="number" name="textn1" id="textn1"> +
+
+    <input type="number" name="textn2" id="textn2">
+
+    <input type="button" value="somar" onclick="somar()">
+
+    <div id="res">
+        Resuntado : 
+    </div>
+    </div>
+    
+
+
+    <script>
+    function somar(){
+    var tn1 =window.document.getElementById('textn1')
+    var tn2 =window.document.getElementById('textn2')
+    var res= window.document.getElementById('res')
+    var n1 = Number(tn1.value)
+    var n2 = Number(tn2.value)
+    var s = n1+n2
+    res.innerHTML=`O valor de  ${n1} mais ${n2} é: ${s}`
+}
+  
+
+
+   </script>
+</body>
+</html>
